@@ -14,12 +14,18 @@ programa
 	funcao criptografamento(cadeia frase){
 		num_caracter = t.numero_caracteres(frase)
 
-		para(inteiro i = 0; i < num_caracter; i++){
+		para(inteiro i = 0; i < num_caracter; i++)
+		{
 			letra = t.obter_caracter(frase, i)
-			para(inteiro x = 0; x < 26; x++){
-				se(letra == letras[x]){
+			
+			para(inteiro x = 0; x < 26; x++)
+			{
+				se(letra == letras[x])
+				{
 					letra_escrita = x + chave
-					se(letra_escrita > 26){
+					
+					se(letra_escrita > 26)
+					{
 						letra_escrita = letra_escrita - 26
 					}
 					escreva(letras[letra_escrita])
