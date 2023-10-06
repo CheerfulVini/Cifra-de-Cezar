@@ -48,11 +48,13 @@ programa
 			caso 1:
 				escreva("Insira a frase a ser criptografada(apenas minusculo e sem números):")
 				leia(criptografar)
+				escreva("\n")
+				
 				escreva("Insira a chave(apenas números positivos):")
 				leia(chave)
 				limpa()
 
-				escreva("Cifra de cézar com chave ", coisa, ":\n")
+				escreva("Cifra de cézar com chave ", chave, ":\n")
 				
 				criptografamento(criptografar)
 			pare
@@ -61,13 +63,31 @@ programa
 				escreva("Insira a frase a ser criptografada(apenas minusculo e sem números):")
 				leia(criptografar)
 				limpa()
-				
-				escreva("Alguma dessas frases é a certa\n \n")
-				para(chave = 0; chave < 26; chave++){
-					criptografamento(criptografar)
-					escreva("\n")
+
+				escreva("Você sabe a chave?\n1-Sim\n2-Não\nInsira sua escolha:")
+				leia(coisa)
+
+				escolha(coisa){
+					caso 1:
+						escreva("Insira a chave(apenas números positivos):")
+						leia(chave)
+						limpa()
+		
+						escreva("Cifra de cézar com chave ", chave, ":\n")
+						chave = chave - chave * 2
+						
+						criptografamento(criptografar)
+					pare
+
+					caso 2:
+						escreva("Alguma dessas frases é a certa\n \n")
+						
+						para(chave = 0; chave < 26; chave++){
+							criptografamento(criptografar)
+							escreva("\n")
+						}
+					pare
 				}
-				
 			pare
 		}
 	}
