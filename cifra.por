@@ -80,6 +80,7 @@ programa
 					pare
 
 					caso 2:
+						limpa()
 						escreva("Alguma dessas frases é a certa\n \n")
 						
 						para(chave = 0; chave < 26; chave++){
